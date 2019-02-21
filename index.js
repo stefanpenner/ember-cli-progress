@@ -2,7 +2,6 @@
 
 const heimdalljs = require('heimdalljs');
 const chalk = require('chalk');
-const ora = require('ora');
 
 // TODO: unit test
 function progress() {
@@ -14,28 +13,29 @@ function progress() {
   return stack.filter(x => x !== 'heimdall').reverse().join(' > ');
 }
 
+function formateProgress(progressText) {
+  return chalk.green('building... ') + (progressText ? `[${progressText}]`: '');
+}
 module.exports = {
   name: require('./package').name,
   preBuild() {
     // TODO: extract and test
     if (this.ui.ci) { return; }
-    this.ui.stopProgress()
-    this.spinner =  ora(chalk.green('building... ')).start();
+    this.ui.startProgress(formateProgress())
     clearInterval(this.interval);
     this.interval = setInterval(() => {
-      let progressText =  progress();
-      this.spinner.text = chalk.green('building... ') + (progressText ? `[${progressText}]`: '');
-    }, 1000/60);
+      this.ui.spinner.text = formateProgress(progress());
+    }, this.ui.spinner.interval);
   },
   postBuild() {
     // TODO: extract and test
     if (this.ui.ci) { return; }
-    this.spinner.stop();
+    this.ui.stopProgress();
     clearInterval(this.interval);
   },
   buildError() {
     // TODO: extract and test
-    this.spinner.stop();
+    this.ui.stopProgress();
     clearInterval(this.interval);
   }
 };
