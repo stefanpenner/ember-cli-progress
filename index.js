@@ -6,9 +6,9 @@ const chalk = require('chalk');
 function progress() {
   let current = heimdalljs.current;
   let name = current.id.name;
-  do {
+  while (current = current.parent) {
     name = `${current.id.name} > ${name}\n`
-  } while (current = current.parent)
+  }
   return name;
 }
 
