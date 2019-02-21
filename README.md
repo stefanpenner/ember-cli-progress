@@ -1,7 +1,7 @@
 ember-cli-progress
 ==============================================================================
 
-[Short description of the addon.]
+Adds a progress indicator to ember-cli's build
 
 
 Compatibility
