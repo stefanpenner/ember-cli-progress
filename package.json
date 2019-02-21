@@ -23,7 +23,8 @@
   "dependencies": {
     "chalk": "^2.4.2",
     "ember-cli-babel": "^7.1.2",
-    "heimdalljs": "^0.2"
+    "heimdalljs": "^0.2",
+    "ora": "^3.1.0"
   },
   "devDependencies": {
     "@ember/optional-features": "^0.6.3",
