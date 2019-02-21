@@ -10,7 +10,7 @@ function progress() {
   while (current = current.parent) { // eslint-disable-line
     stack.push(current.id.name);
   }
-  return stack.filter(x => x !== 'heimdall' && x !== 'command' && x !== 'build').reverse().join(' > ')
+  return stack.filter(x => x !== 'heimdall').reverse().join(' > ');
 }
 
 module.exports = {
@@ -21,7 +21,8 @@ module.exports = {
     this.spinner =  ora(chalk.green('building... ')).start();
     clearInterval(this.interval);
     this.interval = setInterval(() => {
-      this.spinner.text = chalk.green('building... ') + `[${progress()}]`;
+      let progressText =  progress();
+      this.spinner.text = chalk.green('building... ') + (progressText ? `[${progressText}]`: '');
     }, 1000/60);
   },
   postBuild() {
