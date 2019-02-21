@@ -6,7 +6,7 @@ const chalk = require('chalk');
 function progress() {
   let current = heimdalljs.current;
   let stack = [current.id.name];
-  while (current = current.parent) {
+  while (current = current.parent) { // eslint-disable-line
     stack.push(current.id.name);
   }
   return stack.filter(x => x !== 'heimdall').reverse().join(' > ')
