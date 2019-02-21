@@ -3,7 +3,7 @@ ember-cli-progress [![Build Status](https://travis-ci.com/stefanpenner/ember-cli
 
 ember-cli's long lost progress bar
 
-[![asciicast](https://asciinema.org/a/RUGN6RQHNa380RKIRFP94lzYz.svg)](https://asciinema.org/a/RUGN6RQHNa380RKIRFP94lzYz)
+[![asciicast](https://asciinema.org/a/jYyqWp3096aWqUgNNSnBo9hb2.svg)](https://asciinema.org/a/jYyqWp3096aWqUgNNSnBo9hb2)
 
 Compatibility
 ------------------------------------------------------------------------------
