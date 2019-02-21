@@ -1,8 +1,7 @@
 ember-cli-progress
 ==============================================================================
 
-Adds a progress indicator to ember-cli's build
-
+ember-cli's long lost progress bar
 
 Compatibility
 ------------------------------------------------------------------------------
@@ -17,12 +16,6 @@ Installation
 ```
 ember install ember-cli-progress
 ```
-
-
-Usage
-------------------------------------------------------------------------------
-
-[Longer description of how to use the addon in apps.]
 
 
 License
