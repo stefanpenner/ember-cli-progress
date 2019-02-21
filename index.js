@@ -9,7 +9,7 @@ function progress() {
   while (current = current.parent) { // eslint-disable-line
     stack.push(current.id.name);
   }
-  return stack.filter(x => x !== 'heimdall' || x !== 'command' || x !== 'build').reverse().join(' > ')
+  return stack.filter(x => x !== 'heimdall' && x !== 'command' && x !== 'build').reverse().join(' > ')
 }
 
 module.exports = {
