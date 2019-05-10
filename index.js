@@ -21,7 +21,7 @@ module.exports = {
   preBuild() {
     // TODO: extract and test
     if (this.ui.ci) { return; }
-    this.ui.startProgress(formateProgress())
+    this.ui.startProgress(formateProgress(progress()))
     clearInterval(this.interval);
     this.interval = setInterval(() => {
       this.ui.spinner.text = formateProgress(progress());
