@@ -1,6 +1,6 @@
 {
   "name": "ember-cli-progress",
-  "version": "v1.0.11",
+  "version": "1.0.11",
   "description": "ember-cli's long lost progress bar",
   "keywords": [
     "ember-addon"
